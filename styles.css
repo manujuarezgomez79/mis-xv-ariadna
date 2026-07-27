@@ -542,10 +542,18 @@ body {
 
 .cuenta-regresiva {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espaciado-lg);
+}
+
+.cuenta-fila {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: var(--espaciado-md);
-    flex-wrap: wrap;
 }
 
 .cuenta-item {
