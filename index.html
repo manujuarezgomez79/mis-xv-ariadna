@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Invitación Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Pantalla de bienvenida con sobre premium -->
+    <div id="pantalla-bienvenida" class="pantalla-bienvenida">
+        <canvas id="particulas-canvas" class="particulas-canvas"></canvas>
+        <div class="fondo-textura"></div>
+        <div class="sobre-container">
+            <div class="sobre-imagen-container" id="sello">
+                <img src="sobre_final.jpg" alt="Sobre con sello lacrado" class="sobre-imagen">
+                <div class="sello-iniciales-overlay">AMJS</div>
+            </div>
+        </div>
+        <p class="instruccion">Toca el sobre para abrir</p>
+    </div>
+
+    <!-- Contenedor principal de la invitación -->
+    <div id="invitacion-principal" class="invitacion-principal">
+        <canvas id="particulas-canvas-principal" class="particulas-canvas-principal"></canvas>
+        <!-- Reproductor de música flotante -->
+        <div class="reproductor-musica" id="reproductor-musica">
+            <button class="btn-musica" id="btn-musica" aria-label="Controlar música">
+                <span class="icono-nota">♪</span>
+                <span class="indicador-sonido"></span>
+            </button>
+        </div>
+
+        <!-- SECCIÓN 1: Portada Principal / Hero -->
+        <section class="seccion-hero">
+            <div class="hero-contenido">
+                <p class="hero-intro">MIS XV AÑOS</p>
+                <h1 class="hero-nombre" id="nombre-quinceanera">Nombre</h1>
+                <div class="foto-container">
+                    <div class="foto-marco">
+                        <img src="" alt="Foto principal" class="foto-principal" id="foto-principal">
+                        <div class="foto-brillo"></div>
+                    </div>
+                </div>
+                <div class="foto-leyenda">
+                    <p class="leyenda-titulo">Una noche para recordar</p>
+                    <p class="leyenda-texto">"Los quince años son el umbral entre los sueños de la niña y los primeros pasos de la mujer."</p>
+                    <p class="leyenda-subtexto">Con el corazón lleno de alegría, te invito a compartir esta noche tan especial.</p>
+                </div>
+                <div class="hero-ornamento">
+                    <div class="ornamento-linea"></div>
+                    <div class="ornamento-diamante"></div>
+                    <div class="ornamento-linea"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuenta Regresiva -->
+        <section class="seccion-cuenta-regresiva">
+            <div class="cuenta-regresiva-container">
+                <p class="cuenta-titulo">FALTAN</p>
+                <div class="cuenta-regresiva" id="cuenta-regresiva">
+                    <div class="cuenta-item">
+                        <span class="cuenta-numero" id="dias">00</span>
+                        <span class="cuenta-etiqueta">DÍAS</span>
+                    </div>
+                    <div class="cuenta-separador">:</div>
+                    <div class="cuenta-item">
+                        <span class="cuenta-numero" id="horas">00</span>
+                        <span class="cuenta-etiqueta">HORAS</span>
+                    </div>
+                    <div class="cuenta-separador">:</div>
+                    <div class="cuenta-item">
+                        <span class="cuenta-numero" id="minutos">00</span>
+                        <span class="cuenta-etiqueta">MINUTOS</span>
+                    </div>
+                    <div class="cuenta-separador">:</div>
+                    <div class="cuenta-item">
+                        <span class="cuenta-numero" id="segundos">00</span>
+                        <span class="cuenta-etiqueta">SEGUNDOS</span>
+                    </div>
+                </div>
+                <p class="cuenta-mensaje" id="cuenta-mensaje"></p>
+            </div>
+        </section>
+
+        <!-- Información del Invitado -->
+        <section class="seccion-invitado" id="seccion-invitado">
+            <div class="invitado-container">
+                <div class="invitado-tarjeta">
+                    <p class="invitado-etiqueta">INVITADO</p>
+                    <p class="invitado-nombre" id="invitado-nombre">---</p>
+                    <p class="invitado-pases" id="invitado-pases">Pases asignados: --</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Fotografías -->
+        <section class="seccion-galeria">
+            <div class="galeria-container">
+                <p class="galeria-titulo">MOMENTOS</p>
+                <div class="galeria-carrusel">
+                    <div class="galeria-imagenes" id="galeria-imagenes">
+                        <!-- Las imágenes se cargarán dinámicamente desde script.js -->
+                    </div>
+                    <button class="galeria-btn galeria-btn-anterior" id="galeria-anterior" aria-label="Imagen anterior">
+                        <span>‹</span>
+                    </button>
+                    <button class="galeria-btn galeria-btn-siguiente" id="galeria-siguiente" aria-label="Imagen siguiente">
+                        <span>›</span>
+                    </button>
+                </div>
+                <div class="galeria-indicadores" id="galeria-indicadores">
+                    <!-- Los indicadores se generarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Información del Evento -->
+        <section class="seccion-evento">
+            <div class="evento-container">
+                <div class="evento-tarjeta">
+                    <p class="evento-titulo">INFORMACIÓN DEL EVENTO</p>
+                    <div class="evento-detalles">
+                        <div class="evento-item">
+                            <span class="evento-icono">✦</span>
+                            <div class="evento-texto">
+                                <p class="evento-label">SALÓN</p>
+                                <p class="evento-valor" id="salon-nombre">---</p>
+                            </div>
+                        </div>
+                        <div class="evento-item">
+                            <span class="evento-icono">✦</span>
+                            <div class="evento-texto">
+                                <p class="evento-label">FECHA</p>
+                                <p class="evento-valor" id="evento-fecha">---</p>
+                            </div>
+                        </div>
+                        <div class="evento-item">
+                            <span class="evento-icono">✦</span>
+                            <div class="evento-texto">
+                                <p class="evento-label">HORA</p>
+                                <p class="evento-valor" id="evento-hora">---</p>
+                            </div>
+                        </div>
+                        <div class="evento-item">
+                            <span class="evento-icono">✦</span>
+                            <div class="evento-texto">
+                                <p class="evento-label">DIRECCIÓN</p>
+                                <p class="evento-valor" id="evento-direccion">---</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-mapa" id="btn-mapa">
+                        <span class="btn-mapa-texto">CÓMO LLEGAR</span>
+                        <span class="btn-mapa-icono">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Código de Vestimenta -->
+        <section class="seccion-dresscode">
+            <div class="dresscode-container">
+                <div class="dresscode-tarjeta">
+                    <div class="dresscode-icono">
+                        <span>✦</span>
+                    </div>
+                    <p class="dresscode-titulo">DRESS CODE</p>
+                    <p class="dresscode-estilo">FORMAL ELEGANTE</p>
+                    <div class="dresscode-colores">
+                        <div class="color-circulo color-dorado"></div>
+                        <div class="color-circulo color-azul"></div>
+                    </div>
+                    <div class="dresscode-separador"></div>
+                    <p class="dresscode-nota">Los colores dorado y azul quedan estrictamente reservados para la quinceañera.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mesa de Regalos y Transferencias -->
+        <section class="seccion-regalos">
+            <div class="regalos-container">
+                <div class="regalos-tarjeta">
+                    <p class="regalos-mensaje">El mejor regalo es tu presencia. Si deseas hacerme un detalle, puedes elegir la opción que te sea más cómoda:</p>
+                    <div class="regalos-opciones">
+                        <div class="regalo-opcion">
+                            <div class="regalo-opcion-icono">🎁</div>
+                            <p class="regalo-opcion-titulo">Regalo Físico</p>
+                            <p class="regalo-opcion-descripcion">Traer un regalo el día de la fiesta</p>
+                        </div>
+                        <div class="regalo-opcion">
+                            <div class="regalo-opcion-icono">✉️</div>
+                            <p class="regalo-opcion-titulo">Urna de Sobres</p>
+                            <p class="regalo-opcion-descripcion">Si prefieres realizar tu obsequio en efectivo el día del evento, dispondremos de una urna de sobres en la mesa de regalos.</p>
+                        </div>
+                        <div class="regalo-opcion" id="opcion-transferencia">
+                            <div class="regalo-opcion-icono">💳</div>
+                            <p class="regalo-opcion-titulo">Transferencia</p>
+                            <p class="regalo-opcion-descripcion">Si prefieres esta opción</p>
+                        </div>
+                    </div>
+                    <div class="regalos-datos-transferencia" id="regalos-datos-transferencia">
+                        <p class="regalos-nota-titular">La transferencia se realiza a nombre de la madre de Ariadna.</p>
+                        <div class="regalo-item">
+                            <p class="regalo-label">CVU</p>
+                            <div class="regalo-copia-container">
+                                <p class="regalo-valor regalo-cvu" id="regalo-cvu">---</p>
+                                <button class="btn-copiar" data-campo="cvu" aria-label="Copiar CVU">
+                                    <span class="btn-copiar-texto">COPIAR</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="regalo-item">
+                            <p class="regalo-label">ALIAS</p>
+                            <div class="regalo-copia-container">
+                                <p class="regalo-valor" id="regalo-alias">---</p>
+                                <button class="btn-copiar" data-campo="alias" aria-label="Copiar alias">
+                                    <span class="btn-copiar-texto">COPIAR</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="regalo-item">
+                            <p class="regalo-label">TITULAR</p>
+                            <p class="regalo-valor" id="regalo-titular">---</p>
+                        </div>
+                        <div class="regalo-item">
+                            <p class="regalo-label">PLATAFORMA</p>
+                            <p class="regalo-valor" id="regalo-plataforma">---</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmación de Asistencia por WhatsApp -->
+        <section class="seccion-confirmacion">
+            <div class="confirmacion-container">
+                <div class="confirmacion-tarjeta">
+                    <p class="confirmacion-titulo">CONFIRMACIÓN DE ASISTENCIA</p>
+                    <p class="confirmacion-subtitulo">Por favor, confirma tu asistencia</p>
+                    <div class="confirmacion-botones">
+                        <button class="btn-whatsapp" id="btn-whatsapp-ariadna">
+                            <span class="whatsapp-icono">✦</span>
+                            <span class="whatsapp-texto">CONFIRMAR A ARIADNA</span>
+                        </button>
+                        <button class="btn-whatsapp" id="btn-whatsapp-gabriela">
+                            <span class="whatsapp-icono">✦</span>
+                            <span class="whatsapp-texto">CONFIRMAR A GABRIELA</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-contenido">
+                <div class="footer-ornamento"></div>
+                <p class="footer-frase">Te espero para compartir mis XV</p>
+                <p class="footer-texto">Hecho con dedicación para este día especial</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Notificación de copiado -->
+    <div class="notificacion" id="notificacion">
+        <span class="notificacion-texto">¡Copiado correctamente!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
