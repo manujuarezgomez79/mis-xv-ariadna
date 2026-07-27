@@ -13,12 +13,12 @@
     --blanco-perlado: #F5F0E8;
     --rosa-pastel: #F8E8E8;
     --rosa-crema: #F5E0E0;
-    --dorado-suave: #D4AF37;
+    --dorado-suave: #B8860B;
     --dorado-champagne: #C9A962;
-    --dorado-claro: #E8D5A3;
-    --dorado-brillante: #FFD700;
-    --dorado-metalico: #B8860B;
-    --dorado-oscuro: #8B6914;
+    --dorado-claro: #D4AF37;
+    --dorado-brillante: #B8860B;
+    --dorado-metalico: #8B6914;
+    --dorado-oscuro: #6B4F0F;
     --beige-claro: #F5EDE0;
     --beige-medio: #E8DDD0;
     --gris-suave: #8B8680;
@@ -442,7 +442,7 @@ body {
 
 .leyenda-texto {
     font-family: var(--fuente-playfair);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: var(--texto-principal);
     margin-bottom: var(--espaciado-sm);
@@ -450,8 +450,8 @@ body {
 }
 
 .leyenda-subtexto {
-    font-family: var(--fuente-texto);
-    font-size: 0.9rem;
+    font-family: var(--fuente-playfair);
+    font-size: 1.1rem;
     color: var(--texto-secundario);
     line-height: 1.5;
 }
@@ -571,7 +571,7 @@ body {
 
 .cuenta-etiqueta {
     font-family: var(--fuente-cinzel);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -677,7 +677,7 @@ body {
 
 .galeria-titulo {
     font-family: var(--fuente-cinzel);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -812,7 +812,7 @@ body {
 
 .evento-titulo {
     font-family: var(--fuente-cinzel);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -999,7 +999,7 @@ body {
 
 .dresscode-titulo {
     font-family: var(--fuente-cinzel);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -1027,7 +1027,7 @@ body {
 
 .dresscode-nota {
     font-family: var(--fuente-playfair);
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: var(--dorado-metalico);
     font-style: italic;
     line-height: 1.8;
@@ -1129,8 +1129,8 @@ body {
 }
 
 .regalo-opcion-descripcion {
-    font-family: var(--fuente-texto);
-    font-size: 0.85rem;
+    font-family: var(--fuente-playfair);
+    font-size: 1rem;
     color: var(--texto-secundario);
     line-height: 1.5;
 }
@@ -1306,7 +1306,7 @@ body {
 
 .confirmacion-subtitulo {
     font-family: var(--fuente-playfair);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: var(--texto-principal);
     margin-bottom: var(--espaciado-lg);
@@ -1404,7 +1404,7 @@ body {
 
 .footer-frase {
     font-family: var(--fuente-great-vibes);
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--dorado-metalico);
     margin-bottom: var(--espaciado-sm);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
