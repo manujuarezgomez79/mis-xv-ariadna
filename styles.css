@@ -474,6 +474,8 @@ body {
 .foto-principal {
     width: 100%;
     height: auto;
+    aspect-ratio: 2/3;
+    object-fit: contain;
     border-radius: var(--borde-redondo);
     display: block;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
