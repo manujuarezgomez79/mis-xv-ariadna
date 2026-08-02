@@ -107,7 +107,8 @@ const galeria = [
     "carrusel1.jpg",
     "carrusel2.jpg",
     "carrusel3.jpg",
-    "carrusel4.jpg"
+    "carrusel4.jpg",
+    "carrusel5.jpg"
     // Agrega más rutas de imágenes aquí
 ];
 
