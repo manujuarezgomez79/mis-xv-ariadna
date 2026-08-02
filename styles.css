@@ -711,9 +711,10 @@ body {
 .galeria-imagenes img {
     width: 100%;
     height: 450px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
+    background: var(--blanco-perlado);
 }
 
 .galeria-btn {

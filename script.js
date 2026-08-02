@@ -64,7 +64,7 @@ const CONFIGURACION = {
     musica: "photograph.mpeg",
     
     // Ruta de la fotografía principal
-    fotoPrincipal: "foto_principal.jpg",
+    fotoPrincipal: "portada-principal.jpg",
     
     // Datos bancarios para regalos
     regalos: {
